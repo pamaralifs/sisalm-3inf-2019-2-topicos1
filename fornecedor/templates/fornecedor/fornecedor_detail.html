@@ -1,0 +1,18 @@
+{% extends 'fornecedor/base.html' %}
+{% block conteudo %}
+<h1>Fornecedor</h1>
+<p><strong>Código:</strong> {{ fornecedor.id | stringformat:'04d' }}</p>
+<p><strong>Nome/Razão Social:</strong> {{ fornecedor.nome }}</p>
+<p><strong>CNPJ</strong>: {{ fornecedor.cnpj }}</p>
+<p><strong>Telefone:</strong> ({{fornecedor.ddd_telefone}}) {{fornecedor.telefone}}</p>
+<a href="{% url 'fornecedor:fornecedor_delete' fornecedor.id %}" class="btn btn-primary"><i
+        class="far fa-trash-alt"></i> Excluir</a>
+<a href="{% url 'fornecedor:fornecedor_update' fornecedor.id %}" class="btn btn-primary">
+    <i class="far fa-edit"></i>
+    Alterar</a>
+<a href="{% url 'fornecedor:fornecedor_read' %}" class="btn btn-primary">
+    <i class="fas fa-search"></i> Nova Consulta</a>
+<a href="javascript:void(0)" onClick="history.go(-1); return false;" class="btn btn-primary">
+    <i class="far fa-caret-square-left"></i> Voltar</a>
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends 'fornecedor/base.html' %}
+{% block conteudo %}
+<h1>Fornecedor</h1>
+<h2>Deseja realmente apagar este registro?</h2>
+<p><strong>Código:</strong> {{ fornecedor.id | stringformat:'04d' }}</p>
+<p><strong>Nome/Razão Social:</strong> {{ fornecedor.nome }}</p>
+<p><strong>CNPJ</strong>: {{ fornecedor.cnpj }}</p>
+<p><strong>Telefone:</strong> ({{fornecedor.ddd_telefone}}) {{fornecedor.telefone}}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">
+        <i class="far fa-trash-alt"></i> Excluir</button>
+    <a href="javascript:void(0)" onClick="history.go(-1); return false;" 
+        class="btn btn-primary"><i class="far fa-window-close"></i> Cancelar</a>
+</form>
+{% endblock %}
+

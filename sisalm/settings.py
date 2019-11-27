@@ -26,7 +26,7 @@ SECRET_KEY = '@$t=r!r-fr75g$3)*di8s%huirvuf_*1yt)vgfn*e(@4+g3b6_'
 DEBUG = True
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['127.0.0.1','localhost','.pythonanywhere.com']
+ALLOWED_HOSTS = ['*','127.0.0.1','localhost','.pythonanywhere.com']
 
 # Application definition
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'produto',
+    'fornecedor',
 ]
 
 MIDDLEWARE = [
